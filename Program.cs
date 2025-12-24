@@ -25,11 +25,11 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
 
-Применить миграции при старте (только для dev!)
+
 using (var scope = app.Services.CreateScope())
 {
     var context = scope.ServiceProvider.GetRequiredServiceApplicationDbContext();
-    context.Database.Migrate(); автоматически применит миграции
+    context.Database.Migrate(); 
 }
 
 app.Run();
